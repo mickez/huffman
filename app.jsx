@@ -40,12 +40,21 @@ function renderApp(coding, oriBits, newBits) {
 }
 
 function calcSaving(str, coding) {
-    var oriStr = str;
-    for (var i = 0; i < coding.length; i++) {
-        str = str.replace(new RegExp(escapeRegExp(coding[i].letter), 'g'), coding[i].code);
+    var freq = {}, i;
+    for (i = 0; i < str.length; i++) {
+        if (!freq[str[i]]) {
+            freq[str[i]] = 1;
+        } else {
+            freq[str[i]]++;
+        }
     }
 
-    return str.length;
+    var bits = 0;
+    for (i = 0; i < coding.length; i++) {
+        bits += freq[coding[i].letter] * coding[i].code.length;
+    }
+
+    return bits;
 }
 
 function escapeRegExp(string) {
