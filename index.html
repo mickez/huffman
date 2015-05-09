@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Huffman</title>
+
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+</head>
+<body>
+    
+    <h1>Huffman coding demo</h1>
+    <h5>Enter input to see coding</h5>
+    <textarea id="input"></textarea>
+
+    <section id="app">
+        
+    </section>
+
+    <script src="node.js"></script>
+    <script src="huffman.js"></script>
+    <script type="text/jsx" src="app.jsx"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+
+        .codedDisplay {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .codeCard {
+            min-width: 200px;
+            -webkit-box-shadow: 0 0 5px rgba(100, 100, 100, 0.75);
+            box-shadow: 0 0 5px rgba(100, 100, 100, 0.75);
+
+            margin: 10px;
+            padding: 5px;
+        }
+
+        #input {
+            display: block;
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+
+</body>
+</html>
